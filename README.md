@@ -25,14 +25,18 @@ Clone it, run `./rename.sh`, and start writing queries.
 
 ## Prerequisites
 
-| Tool            | Why                                   | Install (Arch)            |
-|-----------------|---------------------------------------|---------------------------|
-| Go 1.26+        | language                              | `pacman -S go`            |
-| Docker          | local DB + integration tests          | `pacman -S docker`        |
-| sqlc            | code generation                       | `pacman -S sqlc`          |
+| Tool     | Why                          | Arch               | Debian / Ubuntu         | Fedora / RHEL        |
+|----------|------------------------------|--------------------|-------------------------|----------------------|
+| Go 1.26+ | language                     | `pacman -S go`     | `apt install golang-go` | `dnf install golang` |
+| Docker   | local DB + integration tests | `pacman -S docker` | `apt install docker.io` | `dnf install docker` |
+| sqlc     | code generation              | `pacman -S sqlc`   | `go install …@latest` ¹ | `go install …@latest` ¹ |
+
+¹ `go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest` — sqlc isn't in the
+Debian/Fedora package repos, so install it through Go.
 
 sqlc is only needed to regenerate code; the generated output is committed, so
-building/testing works without it.
+building/testing works without it. If your distro ships an older Go, install
+1.26+ from the [official binaries](https://go.dev/dl/) instead.
 
 ## Quickstart
 
