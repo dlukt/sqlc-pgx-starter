@@ -1,0 +1,25 @@
+# Binaries
+/bin/
+/dist/
+*.exe
+*.test
+*.out
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Coverage
+coverage.*
+*.cover
+
+# Go workspace files (keep go.work intentionally omitted)
+go.work
+go.work.sum
